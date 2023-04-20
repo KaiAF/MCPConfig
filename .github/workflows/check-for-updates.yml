@@ -158,7 +158,7 @@ jobs:
         uses: octokit/request-action@v2.1.7
         with:
           route: PATCH /repos/{owner}/{repo}/actions/variables/{name}
-          owner: coehlrich
+          owner: KaiAF
           repo: MCPConfig
           name: LATEST_MC_VERSION
           value: ${{ fromJson(needs.check.outputs.new_version).version }}
@@ -169,7 +169,7 @@ jobs:
         uses: octokit/request-action@v2.1.7
         with:
           route: PATCH /repos/{owner}/{repo}/actions/variables/{name}
-          owner: coehlrich
+          owner: KaiAF
           repo: MCPConfig
           name: LATEST_MAINLINE_VERSION
           value: ${{ fromJson(needs.check.outputs.new_version).version }}
