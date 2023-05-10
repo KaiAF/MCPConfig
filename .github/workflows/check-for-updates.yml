@@ -82,10 +82,10 @@ jobs:
           xpath: //metadata/versioning/latest
       - name: Download srgutils
         run: wget https://maven.minecraftforge.net/net/minecraftforge/srgutils/${{ steps.srgutils_version.outputs.info }}/srgutils-${{ steps.srgutils_version.outputs.info }}.jar -O srgutils.jar
-      #- name: Download parser
-      #  run: wget ${{ vars.PARSE_VERSION_JAVA }}
-      #- name: Run parser
-      #  run: java -cp srgutils.jar Main.java ${{ fromJson(needs.check.outputs.new_version).version }}
+      - name: Download parser
+        run: wget ${{ vars.PARSE_VERSION_JAVA }}
+      - name: Run parser
+        run: java -cp srgutils.jar Main.java ${{ fromJson(needs.check.outputs.new_version).version }}
   run-update:
     runs-on: ubuntu-latest
     needs:
