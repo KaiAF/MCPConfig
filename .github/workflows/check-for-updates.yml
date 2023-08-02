@@ -1,7 +1,7 @@
 name: Check For New Snapshots
 on: 
   schedule:
-    - cron: "*/30 6-19 * * *"
+    - cron: "*/30 6-19 * * 3"
   workflow_dispatch:
 permissions:
   actions: write
