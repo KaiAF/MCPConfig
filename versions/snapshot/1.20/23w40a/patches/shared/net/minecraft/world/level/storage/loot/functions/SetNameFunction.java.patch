@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/level/storage/loot/functions/SetNameFunction.java
 +++ b/net/minecraft/world/level/storage/loot/functions/SetNameFunction.java
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
     }
  
     public Set<LootContextParam<?>> m_6231_() {
