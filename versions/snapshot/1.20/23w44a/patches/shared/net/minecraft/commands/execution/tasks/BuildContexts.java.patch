@@ -1,11 +1,11 @@
 --- a/net/minecraft/commands/execution/tasks/BuildContexts.java
 +++ b/net/minecraft/commands/execution/tasks/BuildContexts.java
-@@ -86,7 +86,7 @@
+@@ -94,7 +94,7 @@
  
-       CommandContext<T> commandcontext1 = contextchain.getTopContext();
-       Command<T> command = commandcontext1.getCommand();
--      if (command instanceof CustomCommandExecutor<T> customcommandexecutor) {
-+      if (command instanceof CustomCommandExecutor customcommandexecutor) {
-          ExecutionControl<T> executioncontrol = m_304960_(p_305350_, p_305547_);
+       if (list.isEmpty()) {
+          if (chainmodifiers.m_308742_()) {
+-            p_305350_.m_304682_(new CommandQueueEntry<>(p_308976_, FallthroughTask.m_308710_()));
++            p_305350_.m_304682_(new CommandQueueEntry<T>(p_308976_, FallthroughTask.m_308710_()));
+          }
  
-          for(T t2 : list) {
+       } else {
