@@ -1,0 +1,20 @@
+--- a/net/minecraft/network/chat/ComponentSerialization.java
++++ b/net/minecraft/network/chat/ComponentSerialization.java
+@@ -84,7 +84,7 @@
+ 
+       public <S> DataResult<T> decode(DynamicOps<S> p_304295_, MapLike<S> p_303820_) {
+          for(MapDecoder<? extends T> mapdecoder : this.f_302165_) {
+-            DataResult<? extends T> dataresult = mapdecoder.decode(p_304295_, p_303820_);
++            DataResult dataresult = mapdecoder.decode(p_304295_, p_303820_);
+             if (dataresult.result().isPresent()) {
+                return dataresult;
+             }
+@@ -96,7 +96,7 @@
+       }
+ 
+       public <S> RecordBuilder<S> encode(T p_303782_, DynamicOps<S> p_304318_, RecordBuilder<S> p_304196_) {
+-         MapEncoder<T> mapencoder = this.f_302103_.apply(p_303782_);
++         MapEncoder mapencoder = this.f_302103_.apply(p_303782_);
+          return mapencoder.encode(p_303782_, p_304318_, p_304196_);
+       }
+ 
