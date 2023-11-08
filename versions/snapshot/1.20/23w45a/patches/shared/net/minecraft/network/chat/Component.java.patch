@@ -1,6 +1,6 @@
 --- a/net/minecraft/network/chat/Component.java
 +++ b/net/minecraft/network/chat/Component.java
-@@ -250,7 +250,7 @@
+@@ -251,7 +251,7 @@
        }
  
        static MutableComponent m_130719_(JsonElement p_130720_) {
