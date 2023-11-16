@@ -1,6 +1,6 @@
 --- a/net/minecraft/client/gui/components/AbstractSelectionList.java
 +++ b/net/minecraft/client/gui/components/AbstractSelectionList.java
-@@ -505,7 +505,7 @@
+@@ -471,7 +471,7 @@
     }
  
     @OnlyIn(Dist.CLIENT)

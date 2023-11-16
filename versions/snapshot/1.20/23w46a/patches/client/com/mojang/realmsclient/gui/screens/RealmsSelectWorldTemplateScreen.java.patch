@@ -1,6 +1,6 @@
 --- a/com/mojang/realmsclient/gui/screens/RealmsSelectWorldTemplateScreen.java
 +++ b/com/mojang/realmsclient/gui/screens/RealmsSelectWorldTemplateScreen.java
-@@ -158,8 +158,10 @@
+@@ -157,8 +157,10 @@
           public void run() {
              WorldTemplatePaginatedList worldtemplatepaginatedlist = p_89654_;
  
@@ -12,8 +12,8 @@
 +               worldtemplatepaginatedlist = RealmsSelectWorldTemplateScreen.this.f_96541_.m_18691_(() -> {
                 if (either.right().isPresent()) {
                    RealmsSelectWorldTemplateScreen.f_89605_.error("Couldn't fetch templates", either.right().get());
-                   if (RealmsSelectWorldTemplateScreen.this.f_89612_.m_89817_()) {
-@@ -186,8 +188,7 @@
+                   if (RealmsSelectWorldTemplateScreen.this.f_312354_.m_312657_()) {
+@@ -185,8 +187,7 @@
                       return worldtemplatepaginatedlist1;
                    }
                 }
