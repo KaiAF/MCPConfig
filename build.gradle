@@ -19,7 +19,7 @@ ext {
     PATH_BUILD = file('build').absolutePath
 
     ASM_VERSION = '9.2'
-    SRGUTILS_VERSION = '0.4.11'
+    SRGUTILS_VERSION = '0.5.6'
 }
 
 logger.lifecycle('Timestamp: ' + TIMESTAMP)
@@ -103,13 +103,13 @@ subprojects {
         ])
         MCINJECTOR = null
         if (CONFIG.containsKey('mcinjector'))
-            MCINJECTOR = Utils.readConfig(CONFIG, 'mcinjector', [])
+            MCINJECTOR = Utils.readConfig(CONFIG, 'mcinjector', [:])
         BUNDLE_EXTRACT_JAR = null
         if (CONFIG.containsKey('bundler_extract_jar'))
-            BUNDLE_EXTRACT_JAR = Utils.readConfig(CONFIG, 'bundler_extract_jar', [])
+            BUNDLE_EXTRACT_JAR = Utils.readConfig(CONFIG, 'bundler_extract_jar', [:])
         BUNDLE_EXTRACT_LIBS = null
         if (CONFIG.containsKey('bundler_extract_libs'))
-            BUNDLE_EXTRACT_LIBS = Utils.readConfig(CONFIG, 'bundler_extract_libs', [])
+            BUNDLE_EXTRACT_LIBS = Utils.readConfig(CONFIG, 'bundler_extract_libs', [:])
     }
 
     java.toolchain.languageVersion = JavaLanguageVersion.of(JAVA_TARGET)
@@ -334,9 +334,6 @@ subprojects {
         // Normal workflow tasks
         child.decompile = task "decompile${child.Name}"(type: FernflowerTask, dependsOn: [/*verify,*/ downloadFernflower, child.rename, child.libraries] + (MCINJECTOR == null ? [] : [child.mcinject])) {
             config FERNFLOWER, downloadFernflower
-            javaLauncher = javaToolchains.launcherFor {
-                languageVersion = JavaLanguageVersion.of(JAVA_TARGET)
-            }
             libraries = child.libraries.dest
             input = MCINJECTOR != null ? child.mcinject.dest : child.rename.dest
             log = file(PATH_CACHED_VERSION + side + '.decompile.log')
@@ -490,9 +487,15 @@ subprojects {
             [name: 'hotspot15',  Name: 'HotSpot15',  version: 15, official: false],
             [name: 'hotspot16',  Name: 'HotSpot16',  version: 16, official: false],
             [name: 'hotspot17',  Name: 'HotSpot17',  version: 17, official: false],
+            [name: 'hotspot18',  Name: 'HotSpot18',  version: 18, official: false],
+            [name: 'hotspot19',  Name: 'HotSpot19',  version: 19, official: false],
+            [name: 'hotspot20',  Name: 'HotSpot20',  version: 20, official: false],
             [name: 'official8',  Name: 'Official8',  version: 8,  official: true ],
             [name: 'official16', Name: 'Official16', version: 16, official: true ],
-            [name: 'official17', Name: 'Official17', version: 17, official: true ]
+            [name: 'official17', Name: 'Official17', version: 17, official: true ],
+            [name: 'official18', Name: 'Official18', version: 18, official: true ],
+            [name: 'official19', Name: 'Official19', version: 19, official: true ],
+            [name: 'official20', Name: 'Official20', version: 20, official: true ]
         ]
         jdks.findAll{ it.version >= JAVA_TARGET }.each{ jdk ->
             def testPath = project.file(PATH_CACHED_VERSION + 'test/' + jdk.name + '/')
@@ -535,6 +538,7 @@ subprojects {
                 // JavaCompile task type requires classpath to be specified before the task begins execution
                 // but the data isn't generated yet, so instead - inject the classpath as the first thing done when it begins
                 classpath = files()
+                getOptions().setFork(true)
                 doFirst {
                     classpath = files(java.nio.file.Files.readAllLines(child.libraries.dest.toPath()).collect { file(it.substring(3)) }) // skip "-e="
                 }
@@ -621,6 +625,10 @@ subprojects {
                     steps_def['server'].add(3, [name: 'extractServer', type: 'bundleExtractJar', input: '{downloadServerOutput}'])
                     steps_def['server'].find{'strip'.equals(it.type) }['input'] = '{extractServerOutput}'
                     steps_def['server'].find{'listLibraries'.equals(it.type) }['bundle'] = '{downloadServerOutput}'
+                }
+
+                if (functions_def.values().any { it.java_version != null }) {
+                    specVer = 4 // Spec v4 adds the ability to set a java version to run a tool with
                 }
                 
                 json {

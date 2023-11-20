@@ -1,0 +1,11 @@
+--- a/net/minecraft/commands/execution/tasks/BuildContexts.java
++++ b/net/minecraft/commands/execution/tasks/BuildContexts.java
+@@ -76,7 +76,7 @@
+ 
+       CommandContext<T> commandcontext1 = contextchain.getTopContext();
+       Command<T> command = commandcontext1.getCommand();
+-      if (command instanceof CustomCommandExecutor<T> customcommandexecutor) {
++      if (command instanceof CustomCommandExecutor customcommandexecutor) {
+          ExecutionControl<T> executioncontrol = m_304960_(p_305350_, p_305547_);
+ 
+          for(T t1 : list) {

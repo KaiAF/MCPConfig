@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/level/block/TorchBlock.java
++++ b/net/minecraft/world/level/block/TorchBlock.java
+@@ -13,7 +13,7 @@
+ import net.minecraft.world.level.block.state.BlockState;
+ 
+ public class TorchBlock extends BaseTorchBlock {
+-   protected static final MapCodec<SimpleParticleType> f_301934_ = BuiltInRegistries.f_257034_.m_194605_().comapFlatMap((p_304331_) -> {
++   protected static final MapCodec<SimpleParticleType> f_301934_ = BuiltInRegistries.f_257034_.m_194605_().<SimpleParticleType>comapFlatMap((p_304331_) -> {
+       DataResult dataresult;
+       if (p_304331_ instanceof SimpleParticleType simpleparticletype) {
+          dataresult = DataResult.success(simpleparticletype);
