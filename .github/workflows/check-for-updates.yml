@@ -124,7 +124,7 @@ jobs:
                 if (info.april) {
                   branch += info.version;
                 } else {
-                  branch += process.env.TARGET_VERSION + "-" + "dev";
+                  branch += process.env.TARGET_VERSION + "-dev";
                 }
                 return branch;
               }
