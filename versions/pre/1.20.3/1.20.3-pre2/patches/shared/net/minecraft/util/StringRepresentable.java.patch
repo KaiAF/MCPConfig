@@ -1,0 +1,18 @@
+--- a/net/minecraft/util/StringRepresentable.java
++++ b/net/minecraft/util/StringRepresentable.java
+@@ -28,13 +28,13 @@
+    }
+ 
+    static <E extends Enum<E> & StringRepresentable> StringRepresentable.EnumCodec<E> m_274478_(Supplier<E[]> p_275615_, Function<String, String> p_275259_) {
+-      E[] ae = (Enum[])p_275615_.get();
++      E[] ae = p_275615_.get();
+       Function<String, E> function = m_303058_(ae, p_275259_);
+       return new StringRepresentable.EnumCodec<>(ae, function);
+    }
+ 
+    static <T extends StringRepresentable> Codec<T> m_303160_(Supplier<T[]> p_303916_) {
+-      T[] at = (StringRepresentable[])p_303916_.get();
++      T[] at = (T[])p_303916_.get();
+       Function<String, T> function = m_303058_(at, (p_303706_) -> {
+          return p_303706_;
+       });
