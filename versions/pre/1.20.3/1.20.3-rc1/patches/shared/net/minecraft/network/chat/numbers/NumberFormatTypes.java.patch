@@ -1,0 +1,11 @@
+--- a/net/minecraft/network/chat/numbers/NumberFormatTypes.java
++++ b/net/minecraft/network/chat/numbers/NumberFormatTypes.java
+@@ -20,7 +20,7 @@
+    }
+ 
+    public static <T extends NumberFormat> void m_312588_(FriendlyByteBuf p_313145_, T p_313105_) {
+-      NumberFormatType<T> numberformattype = p_313105_.m_312570_();
++      NumberFormatType<T> numberformattype = (NumberFormatType<T>)p_313105_.m_312570_();
+       p_313145_.m_236818_(BuiltInRegistries.f_312370_, numberformattype);
+       numberformattype.m_312562_(p_313145_, p_313105_);
+    }
