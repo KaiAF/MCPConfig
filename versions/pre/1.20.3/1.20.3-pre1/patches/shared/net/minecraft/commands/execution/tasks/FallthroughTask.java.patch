@@ -1,0 +1,11 @@
+--- a/net/minecraft/commands/execution/tasks/FallthroughTask.java
++++ b/net/minecraft/commands/execution/tasks/FallthroughTask.java
+@@ -9,7 +9,7 @@
+    private static final FallthroughTask<? extends ExecutionCommandSource<?>> f_308610_ = new FallthroughTask<>();
+ 
+    public static <T extends ExecutionCommandSource<T>> EntryAction<T> m_308710_() {
+-      return f_308610_;
++      return (EntryAction<T>)f_308610_;
+    }
+ 
+    public void m_304704_(ExecutionContext<T> p_308979_, Frame p_309084_) {

@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/level/block/LiquidBlock.java
++++ b/net/minecraft/world/level/block/LiquidBlock.java
+@@ -36,7 +36,7 @@
+ import net.minecraft.world.phys.shapes.VoxelShape;
+ 
+ public class LiquidBlock extends Block implements BucketPickup {
+-   private static final Codec<FlowingFluid> f_302216_ = BuiltInRegistries.f_257020_.m_194605_().comapFlatMap((p_304285_) -> {
++   private static final Codec<FlowingFluid> f_302216_ = BuiltInRegistries.f_257020_.m_194605_().<FlowingFluid>comapFlatMap((p_304285_) -> {
+       DataResult dataresult;
+       if (p_304285_ instanceof FlowingFluid flowingfluid) {
+          dataresult = DataResult.success(flowingfluid);

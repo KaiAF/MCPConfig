@@ -1,0 +1,11 @@
+--- a/net/minecraft/advancements/critereon/SlideDownBlockTrigger.java
++++ b/net/minecraft/advancements/critereon/SlideDownBlockTrigger.java
+@@ -34,7 +34,7 @@
+             return p_311411_.f_67001_.flatMap((p_310816_) -> {
+                return p_310816_.m_294047_(((Block)p_310814_.m_203334_()).m_49965_());
+             }).map((p_310818_) -> {
+-               return DataResult.error(() -> {
++               return DataResult.<SlideDownBlockTrigger.TriggerInstance>error(() -> {
+                   return "Block" + p_310814_ + " has no property " + p_310818_;
+                });
+             });

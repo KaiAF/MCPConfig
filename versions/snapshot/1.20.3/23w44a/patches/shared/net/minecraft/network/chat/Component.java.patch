@@ -1,0 +1,11 @@
+--- a/net/minecraft/network/chat/Component.java
++++ b/net/minecraft/network/chat/Component.java
+@@ -250,7 +250,7 @@
+       }
+ 
+       static MutableComponent m_130719_(JsonElement p_130720_) {
+-         return Util.m_260975_(ComponentSerialization.f_302109_.parse(JsonOps.INSTANCE, p_130720_), JsonParseException::new);
++         return (MutableComponent)Util.m_260975_(ComponentSerialization.f_302109_.parse(JsonOps.INSTANCE, p_130720_), JsonParseException::new);
+       }
+ 
+       static JsonElement m_130723_(Component p_304356_) {

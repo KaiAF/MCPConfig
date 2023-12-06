@@ -1,0 +1,11 @@
+--- a/net/minecraft/client/gui/components/AbstractSelectionList.java
++++ b/net/minecraft/client/gui/components/AbstractSelectionList.java
+@@ -471,7 +471,7 @@
+    }
+ 
+    @OnlyIn(Dist.CLIENT)
+-   protected abstract static class Entry<E extends AbstractSelectionList.Entry<E>> implements GuiEventListener {
++   public abstract static class Entry<E extends AbstractSelectionList.Entry<E>> implements GuiEventListener {
+       /** @deprecated */
+       @Deprecated
+       AbstractSelectionList<E> f_93521_;
