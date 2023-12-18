@@ -12,7 +12,7 @@ on:
       old_branch:
         description: 'Old branch'
         required: true
-        default: 'upstream/master'
+        default: 'origin/master'
       old_version:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Old version'
@@ -97,8 +97,8 @@ jobs:
             failed++;
           }
           
-          if (oldBranch.startsWith("upstream/") && newBranch == "") {
-            core.error("if the old branch is set to an upstream branch then the new branch needs to be set since this workflow cannot push to upstream")
+          if (oldBranch.startsWith("origin/") && newBranch == "") {
+            core.error("if the old branch is set to an origin branch then the new branch needs to be set since this workflow cannot push to upstream")
             failed++;
           }
           
@@ -161,10 +161,6 @@ jobs:
           build/download-task/**
           .gradle/**
         key: gradle-other-
-    - run: |
-        git remote add upstream https://github.com/MinecraftForge/MCPConfig
-        git fetch upstream
-        git checkout -B ${{ fromJson(steps.split_version.outputs.result).old_branch }} remotes/${{ github.event.inputs.old_branch }}
     - name: Set up JDK ${{ vars.JAVA_VERSION }}
       uses: actions/setup-java@v3
       with:
@@ -254,7 +250,7 @@ jobs:
     - if: ${{ github.event.inputs.new_branch }}
       run: |
         git stash
-        git checkout ${{ github.event.inputs.new_branch }} || git checkout -B ${{ github.event.inputs.new_branch }} remotes/upstream/master
+        git checkout ${{ github.event.inputs.new_branch }} || git checkout -B ${{ github.event.inputs.new_branch }} remotes/origin/master
         git push -u origin ${{ github.event.inputs.new_branch }}
     - if: ${{ inputs.new_branch && inputs.copy-extras }}
       run: rm -rf versions/${{ github.event.inputs.new_version }}
