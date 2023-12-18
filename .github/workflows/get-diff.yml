@@ -69,8 +69,6 @@ jobs:
           build/versions/${{ fromJson(steps.split_version.outputs.result).new_version_name }}/**
           versions/${{ inputs.new_version }}/build/download-task/**
         key: version-${{ fromJson(steps.split_version.outputs.result).new_version_name }}-
-        run: |
-          git checkout -B ${{ fromJson(steps.split_version.outputs.result).old_branch }} remotes/${{ inputs.old_branch }}
     - uses: actions/cache/restore@v3
       name: Restore ${{ fromJson(steps.split_version.outputs.result).old_version_name }} cache
       with:
@@ -107,6 +105,8 @@ jobs:
           build/download-task/**
           .gradle/**
         key: gradle-other-
+    - run: |
+        git checkout -B ${{ fromJson(steps.split_version.outputs.result).old_branch }} remotes/${{ inputs.old_branch }}
     - name: Get old joined src
       uses: gradle/gradle-build-action@v2
       with:
