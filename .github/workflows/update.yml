@@ -156,6 +156,8 @@ jobs:
           buildSrc/build/**
           buildSrc/.gradle/**
         key: buildsrc-build-
+        run: |
+          git checkout -B ${{ fromJson(steps.split_version.outputs.result).old_branch }} remotes/${{ github.event.inputs.old_branch }}
     - uses: actions/cache/restore@v3
       name: Restore Other cache
       with:
