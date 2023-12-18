@@ -96,12 +96,14 @@ jobs:
             core.error("Patches version either needs to be kept empty or needs to be set to a version that is on the old branch and needs to be in the format of either `release/<version>`, `pre/<target>/<version>`, or `snapshot/<target>/<version>`")
             failed++;
           }
-          
+
+          /*
           if (oldBranch.startsWith("origin/") && newBranch == "") {
             core.error("if the old branch is set to an origin branch then the new branch needs to be set since this workflow cannot push to upstream")
             failed++;
           }
-          
+          */
+
           if (!versionRegex.test(newVersion)) {
             core.error("New version needs to be a version that doesn't exist on the new branch and needs to be in the format of either `release/<version>`, `pre/<target>/<version>`, or `snapshot/<target>/<version>`")
             failed++;
