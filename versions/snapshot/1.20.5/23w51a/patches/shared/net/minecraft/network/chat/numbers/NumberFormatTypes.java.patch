@@ -1,6 +1,6 @@
 --- a/net/minecraft/network/chat/numbers/NumberFormatTypes.java
 +++ b/net/minecraft/network/chat/numbers/NumberFormatTypes.java
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
     }
  
     public static <T extends NumberFormat> void m_306327_(FriendlyByteBuf p_313171_, T p_312224_) {
