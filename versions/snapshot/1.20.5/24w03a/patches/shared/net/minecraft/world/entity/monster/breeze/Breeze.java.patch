@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/entity/monster/breeze/Breeze.java
 +++ b/net/minecraft/world/entity/monster/breeze/Breeze.java
-@@ -62,7 +62,7 @@
+@@ -69,7 +69,7 @@
     }
  
     public Brain<Breeze> m_6274_() {

@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/level/GameRules.java
 +++ b/net/minecraft/world/level/GameRules.java
-@@ -155,8 +155,8 @@
+@@ -162,8 +162,8 @@
     }
  
     private static <T extends GameRules.Value<T>> void m_46166_(GameRules.GameRuleTypeVisitor p_46167_, GameRules.Key<?> p_46168_, GameRules.Type<?> p_46169_) {
@@ -11,3 +11,12 @@
     }
  
     public void m_46176_(GameRules p_46177_, @Nullable MinecraftServer p_46178_) {
+@@ -325,7 +325,7 @@
+       public boolean m_46314_(String p_46315_) {
+          try {
+             StringReader stringreader = new StringReader(p_46315_);
+-            this.f_46284_ = this.f_46360_.f_46337_.get().parse(stringreader);
++            this.f_46284_ = (int)this.f_46360_.f_46337_.get().parse(stringreader);
+             return !stringreader.canRead();
+          } catch (CommandSyntaxException commandsyntaxexception) {
+             return false;

@@ -3,6 +3,7 @@ gradle.properties
 /repo/
 /versions/**/projects/
 /versions/**/natives/
+/testing/
 
 /java_versions.json
 

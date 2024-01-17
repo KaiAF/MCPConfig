@@ -8,8 +8,8 @@
 +      return DataFixUtils.orElse(this.m_203431_(p_206059_), List.of());
     }
  
-    HolderSet.Named<T> m_203561_(TagKey<T> p_206045_);
-@@ -186,7 +186,7 @@
+    default Optional<Holder<T>> m_316614_(TagKey<T> p_318591_, RandomSource p_319169_) {
+@@ -192,7 +192,7 @@
  
           @Nullable
           public Holder<T> m_7942_(int p_259972_) {
@@ -18,7 +18,7 @@
           }
  
           public int m_13562_() {
-@@ -195,7 +195,7 @@
+@@ -201,7 +201,7 @@
  
           public Iterator<Holder<T>> iterator() {
              return Registry.this.m_203611_().map((p_260061_) -> {

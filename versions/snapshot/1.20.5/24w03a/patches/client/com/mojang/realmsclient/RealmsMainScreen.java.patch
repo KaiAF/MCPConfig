@@ -1,6 +1,6 @@
 --- a/com/mojang/realmsclient/RealmsMainScreen.java
 +++ b/com/mojang/realmsclient/RealmsMainScreen.java
-@@ -575,7 +575,7 @@
+@@ -576,7 +576,7 @@
  
     @Nullable
     private RealmsServer m_193481_() {
