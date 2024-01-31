@@ -1,0 +1,11 @@
+--- a/net/minecraft/network/protocol/BundlerInfo.java
++++ b/net/minecraft/network/protocol/BundlerInfo.java
+@@ -36,7 +36,7 @@
+                   } else if (this.f_315375_.size() >= 4096) {
+                      throw new IllegalStateException("Too many packets in a bundle");
+                   } else {
+-                     this.f_315375_.add(p_318510_);
++                     this.f_315375_.add((Packet<T>)p_318510_);
+                      return null;
+                   }
+                }
