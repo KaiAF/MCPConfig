@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity.java
++++ b/net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity.java
+@@ -256,7 +256,7 @@
+       if (p_155017_.m_58425_() || flag3 && flag2) {
+          RecipeHolder<?> recipeholder;
+          if (flag2) {
+-            recipeholder = p_155017_.f_222691_.m_213657_(p_155017_, p_155014_).orElse((RecipeHolder<? extends AbstractCookingRecipe>)null);
++            recipeholder = p_155017_.f_222691_.m_213657_(p_155017_, p_155014_).orElse(null);
+          } else {
+             recipeholder = null;
+          }
