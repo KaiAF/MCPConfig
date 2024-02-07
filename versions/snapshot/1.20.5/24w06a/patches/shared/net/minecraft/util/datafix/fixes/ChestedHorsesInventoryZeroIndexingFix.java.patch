@@ -1,0 +1,11 @@
+--- a/net/minecraft/util/datafix/fixes/ChestedHorsesInventoryZeroIndexingFix.java
++++ b/net/minecraft/util/datafix/fixes/ChestedHorsesInventoryZeroIndexingFix.java
+@@ -17,7 +17,7 @@
+    }
+ 
+    protected TypeRewriteRule makeRule() {
+-      OpticFinder<Pair<String, Pair<Either<Pair<String, String>, Unit>, Pair<Either<?, Unit>, Dynamic<?>>>>> opticfinder = DSL.typeFinder(this.getInputSchema().getType(References.f_16782_));
++      OpticFinder<Pair<String, Pair<Either<Pair<String, String>, Unit>, Pair<Either<?, Unit>, Dynamic<?>>>>> opticfinder = DSL.typeFinder((Type<Pair<String, Pair<Either<Pair<String, String>, Unit>, Pair<Either<?, Unit>, Dynamic<?>>>>>)this.getInputSchema().getType(References.f_16782_));
+       Type<?> type = this.getInputSchema().getType(References.f_16786_);
+       return TypeRewriteRule.seq(this.m_321071_(opticfinder, type, "minecraft:llama"), this.m_321071_(opticfinder, type, "minecraft:mule"), this.m_321071_(opticfinder, type, "minecraft:donkey"));
+    }
