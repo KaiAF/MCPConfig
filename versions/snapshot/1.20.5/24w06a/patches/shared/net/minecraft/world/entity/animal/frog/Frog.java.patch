@@ -8,4 +8,4 @@
 +      return (Brain<Frog>)super.m_6274_();
     }
  
-    protected void m_8097_() {
+    protected void m_8097_(SynchedEntityData.Builder p_324428_) {

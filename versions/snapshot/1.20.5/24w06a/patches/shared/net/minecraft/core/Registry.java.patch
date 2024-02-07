@@ -1,6 +1,6 @@
 --- a/net/minecraft/core/Registry.java
 +++ b/net/minecraft/core/Registry.java
-@@ -165,7 +165,7 @@
+@@ -164,7 +164,7 @@
     Optional<HolderSet.Named<T>> m_203431_(TagKey<T> p_206052_);
  
     default Iterable<Holder<T>> m_206058_(TagKey<T> p_206059_) {
@@ -9,7 +9,7 @@
     }
  
     default Optional<Holder<T>> m_316614_(TagKey<T> p_318591_, RandomSource p_319169_) {
-@@ -192,7 +192,7 @@
+@@ -191,7 +191,7 @@
  
           @Nullable
           public Holder<T> m_7942_(int p_259972_) {
@@ -18,7 +18,7 @@
           }
  
           public int m_13562_() {
-@@ -201,7 +201,7 @@
+@@ -200,7 +200,7 @@
  
           public Iterator<Holder<T>> iterator() {
              return Registry.this.m_203611_().map((p_260061_) -> {

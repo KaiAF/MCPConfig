@@ -1,6 +1,15 @@
 --- a/net/minecraft/world/entity/Mob.java
 +++ b/net/minecraft/world/entity/Mob.java
-@@ -1191,7 +1191,7 @@
+@@ -492,7 +492,7 @@
+       if (p_21450_.m_128425_("leash", 10)) {
+          this.f_323034_ = Either.left(p_21450_.m_128469_("leash").m_128342_("UUID"));
+       } else if (p_21450_.m_128425_("leash", 11)) {
+-         this.f_323034_ = (Either)NbtUtils.m_129239_(p_21450_, "leash").map(Either::right).orElse((Object)null);
++         this.f_323034_ = (Either)NbtUtils.m_129239_(p_21450_, "leash").map(Either::right).orElse(null);
+       } else {
+          this.f_323034_ = null;
+       }
+@@ -1202,7 +1202,7 @@
           if (itemstack.m_41720_() instanceof SpawnEggItem) {
              if (this.m_9236_() instanceof ServerLevel) {
                 SpawnEggItem spawneggitem = (SpawnEggItem)itemstack.m_41720_();
