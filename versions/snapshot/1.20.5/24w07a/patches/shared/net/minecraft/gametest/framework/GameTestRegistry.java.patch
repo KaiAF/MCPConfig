@@ -13,8 +13,8 @@
        String s3 = gametest.m_177046_().isEmpty() ? s2 : s1 + "." + gametest.m_177046_();
        String s4 = gametest.m_177043_();
        Rotation rotation = StructureUtils.m_127835_(gametest.m_177044_());
--      return new TestFunction(s4, s2, s3, rotation, gametest.m_177042_(), gametest.m_177047_(), gametest.m_177045_(), gametest.m_177049_(), gametest.m_177048_(), m_177519_(p_177516_));
-+      return new TestFunction(s4, s2, s3, rotation, gametest.m_177042_(), gametest.m_177047_(), gametest.m_177045_(), gametest.m_177049_(), gametest.m_177048_(), (Consumer<net.minecraft.gametest.framework.GameTestHelper>)m_177519_(p_177516_));
+-      return new TestFunction(s4, s2, s3, rotation, gametest.m_177042_(), gametest.m_177047_(), gametest.m_177045_(), gametest.m_177049_(), gametest.m_177048_(), gametest.m_324897_(), m_177519_(p_177516_));
++      return new TestFunction(s4, s2, s3, rotation, gametest.m_177042_(), gametest.m_177047_(), gametest.m_177045_(), gametest.m_177049_(), gametest.m_177048_(), gametest.m_324897_(), (Consumer<net.minecraft.gametest.framework.GameTestHelper>)m_177519_(p_177516_));
     }
  
     private static Consumer<?> m_177519_(Method p_177520_) {
