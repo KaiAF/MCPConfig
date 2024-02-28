@@ -1,0 +1,11 @@
+--- a/net/minecraft/server/network/ServerGamePacketListenerImpl.java
++++ b/net/minecraft/server/network/ServerGamePacketListenerImpl.java
+@@ -753,7 +753,7 @@
+          ItemStack itemstack1 = itemstack.m_320719_(Items.f_42615_, 1);
+          itemstack1.m_327141_(DataComponents.f_325877_);
+          List<Filterable<Component>> list = p_215210_.stream().map((p_328199_) -> {
+-            return this.m_326935_(p_328199_).m_327081_(Component::m_237113_);
++            return this.m_326935_(p_328199_).<Component>m_327081_(Component::m_237113_);
+          }).toList();
+          itemstack1.m_326949_(DataComponents.f_325888_, new WrittenBookContent(this.m_326935_(p_215209_), this.f_9743_.m_7755_().getString(), 0, list, true));
+          this.f_9743_.m_150109_().m_6836_(p_215211_, itemstack1);
