@@ -1,0 +1,11 @@
+--- a/net/minecraft/client/sounds/SoundEngineExecutor.java
++++ b/net/minecraft/client/sounds/SoundEngineExecutor.java
+@@ -40,7 +40,7 @@
+ 
+    }
+ 
+-   protected void m_5667_() {
++   public void m_5667_() {
+       LockSupport.park("waiting for tasks");
+    }
+ 

@@ -1,0 +1,11 @@
+--- a/net/minecraft/network/codec/IdDispatchCodec.java
++++ b/net/minecraft/network/codec/IdDispatchCodec.java
+@@ -47,7 +47,7 @@
+          IdDispatchCodec.Entry<B, V, T> entry = this.f_315402_.get(i);
+ 
+          try {
+-            StreamCodec<? super B, V> streamcodec = entry.f_316035_;
++            StreamCodec<? super B, V> streamcodec = (StreamCodec<? super B, V>)entry.f_316035_;
+             streamcodec.m_316382_(p_318189_, p_318372_);
+          } catch (Exception exception) {
+             throw new EncoderException("Failed to encode packet '" + t + "'", exception);
