@@ -9,3 +9,12 @@
           }
        };
     }
+@@ -50,7 +50,7 @@
+    }
+ 
+    public <U> RegistryOps<U> m_326750_(DynamicOps<U> p_328888_) {
+-      return p_328888_ == this.f_135465_ ? this : new RegistryOps<>(p_328888_, this.f_254668_);
++      return p_328888_ == this.f_135465_ ? (RegistryOps<U>)this : new RegistryOps<>(p_328888_, this.f_254668_);
+    }
+ 
+    public <E> Optional<HolderOwner<E>> m_255056_(ResourceKey<? extends Registry<? extends E>> p_255757_) {

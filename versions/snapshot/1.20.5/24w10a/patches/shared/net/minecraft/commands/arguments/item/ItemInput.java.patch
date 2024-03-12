@@ -1,6 +1,6 @@
 --- a/net/minecraft/commands/arguments/item/ItemInput.java
 +++ b/net/minecraft/commands/arguments/item/ItemInput.java
-@@ -56,7 +56,7 @@
+@@ -68,7 +68,7 @@
     }
  
     private String m_235284_() {

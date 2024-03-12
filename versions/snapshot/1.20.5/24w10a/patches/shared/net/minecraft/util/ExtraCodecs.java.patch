@@ -1,6 +1,6 @@
 --- a/net/minecraft/util/ExtraCodecs.java
 +++ b/net/minecraft/util/ExtraCodecs.java
-@@ -252,7 +252,7 @@
+@@ -241,7 +241,7 @@
        }, (p_184459_) -> {
           return ImmutableList.of(p_184366_.apply(p_184459_), p_184367_.apply(p_184459_));
        });
@@ -9,7 +9,7 @@
           return p_184360_.group(p_184362_.fieldOf(p_184363_).forGetter(Pair::getFirst), p_184362_.fieldOf(p_184364_).forGetter(Pair::getSecond)).apply(p_184360_, Pair::of);
        }).comapFlatMap((p_184392_) -> {
           return p_184365_.apply((P)p_184392_.getFirst(), (P)p_184392_.getSecond());
-@@ -593,7 +593,7 @@
+@@ -600,7 +600,7 @@
           public <T> RecordBuilder<T> encode(V p_309380_, DynamicOps<T> p_311460_, RecordBuilder<T> p_311592_) {
              K k = p_311760_.apply(p_309380_);
              p_311592_.add(p_311089_, p_310912_.encodeStart(p_311460_, k));
@@ -18,7 +18,7 @@
              if (dataresult.result().isEmpty() || !Objects.equals(dataresult.result().get(), p_311460_.emptyMap())) {
                 p_311592_.add(p_310965_, dataresult);
              }
-@@ -602,7 +602,7 @@
+@@ -609,7 +609,7 @@
           }
  
           private <T, V2 extends V> DataResult<T> m_306136_(Codec<V2> p_313212_, V p_310224_, DynamicOps<T> p_311229_) {
@@ -27,3 +27,12 @@
           }
        };
     }
+@@ -627,7 +627,7 @@
+          }
+ 
+          private <T, V2 extends V> DataResult<T> m_327648_(Codec<V2> p_330004_, V p_330093_, DynamicOps<T> p_329951_) {
+-            return p_330004_.encodeStart(p_329951_, p_330093_);
++            return p_330004_.encodeStart(p_329951_, (V2)p_330093_);
+          }
+ 
+          public <T> DataResult<Pair<Map<K, V>, T>> decode(DynamicOps<T> p_329113_, T p_329158_) {

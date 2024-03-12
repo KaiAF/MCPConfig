@@ -1,0 +1,43 @@
+--- a/net/minecraft/core/component/PatchedDataComponentMap.java
++++ b/net/minecraft/core/component/PatchedDataComponentMap.java
+@@ -57,19 +57,19 @@
+ 
+    @Nullable
+    public <T> T m_326546_(DataComponentType<? extends T> p_329821_) {
+-      Optional<? extends T> optional = this.f_325464_.get(p_329821_);
+-      return (T)(optional != null ? optional.orElse((T)null) : this.f_325376_.m_326546_(p_329821_));
++      Optional<? extends T> optional = (Optional<? extends T>)this.f_325464_.get(p_329821_);
++      return (T)(optional != null ? optional.orElse(null) : this.f_325376_.m_326546_(p_329821_));
+    }
+ 
+    @Nullable
+    public <T> T m_327595_(DataComponentType<? super T> p_329025_, @Nullable T p_328603_) {
+       this.m_327792_();
+-      T t = this.f_325376_.m_326546_(p_329025_);
++      T t = (T)this.f_325376_.m_326546_(p_329025_);
+       Optional<T> optional;
+       if (Objects.equals(p_328603_, t)) {
+-         optional = this.f_325464_.remove(p_329025_);
++         optional = (Optional<T>)this.f_325464_.remove(p_329025_);
+       } else {
+-         optional = this.f_325464_.put(p_329025_, Optional.ofNullable(p_328603_));
++         optional = (Optional<T>)this.f_325464_.put(p_329025_, Optional.ofNullable(p_328603_));
+       }
+ 
+       return (T)(optional != null ? optional.orElse(t) : t);
+@@ -81,12 +81,12 @@
+       T t = this.f_325376_.m_326546_(p_329065_);
+       Optional<? extends T> optional;
+       if (t != null) {
+-         optional = this.f_325464_.put(p_329065_, Optional.empty());
++         optional = (Optional<? extends T>)this.f_325464_.put(p_329065_, Optional.empty());
+       } else {
+-         optional = this.f_325464_.remove(p_329065_);
++         optional = (Optional<? extends T>)this.f_325464_.remove(p_329065_);
+       }
+ 
+-      return (T)(optional != null ? optional.orElse((T)null) : t);
++      return (T)(optional != null ? optional.orElse(null) : t);
+    }
+ 
+    public void m_326838_(DataComponentPatch p_330198_) {
