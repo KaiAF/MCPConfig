@@ -1,0 +1,13 @@
+--- a/net/minecraft/client/gui/screens/VideoSettingsScreen.java
++++ b/net/minecraft/client/gui/screens/VideoSettingsScreen.java
+@@ -144,9 +144,7 @@
+    public boolean m_6050_(double p_278332_, double p_278334_, double p_278285_, double p_300252_) {
+       if (Screen.m_96637_()) {
+          OptionInstance<Integer> optioninstance = this.f_96282_.m_231928_();
+-         OptionInstance.ValueSet $$6 = optioninstance.m_231555_();
+-         if ($$6 instanceof OptionInstance.ClampingLazyMaxIntRange) {
+-            OptionInstance.ClampingLazyMaxIntRange optioninstance$clampinglazymaxintrange = (OptionInstance.ClampingLazyMaxIntRange)$$6;
++         if (optioninstance.m_231555_() instanceof OptionInstance.ClampingLazyMaxIntRange optioninstance$clampinglazymaxintrange) {
+             int i = optioninstance.m_231551_() + (int)Math.signum(p_300252_);
+             if (i != 0 && i <= optioninstance$clampinglazymaxintrange.m_214118_()) {
+                CycleButton<Integer> cyclebutton = (CycleButton)this.f_96801_.m_232535_(optioninstance);

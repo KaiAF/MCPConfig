@@ -1,0 +1,28 @@
+--- a/net/minecraft/server/network/ServerGamePacketListenerImpl.java
++++ b/net/minecraft/server/network/ServerGamePacketListenerImpl.java
+@@ -410,6 +410,7 @@
+             }
+ 
+             entity.m_6478_(MoverType.PLAYER, new Vec3(d6, d7, d8));
++            double d11 = d7;
+             d6 = d3 - entity.m_20185_();
+             d7 = d4 - entity.m_20186_();
+             if (d7 > -0.5D || d7 < 0.5D) {
+@@ -434,7 +435,7 @@
+ 
+             this.f_9743_.m_284548_().m_7726_().m_8385_(this.f_9743_);
+             this.f_9743_.m_307572_(this.f_9743_.m_20185_() - d0, this.f_9743_.m_20186_() - d1, this.f_9743_.m_20189_() - d2);
+-            this.f_9738_ = d7 >= -0.03125D && !flag1 && !this.f_291389_.m_129915_() && !entity.m_20068_() && this.m_9793_(entity);
++            this.f_9738_ = d11 >= -0.03125D && !flag1 && !this.f_291389_.m_129915_() && !entity.m_20068_() && this.m_9793_(entity);
+             this.f_9763_ = entity.m_20185_();
+             this.f_9764_ = entity.m_20186_();
+             this.f_9765_ = entity.m_20189_();
+@@ -757,7 +758,7 @@
+       if (itemstack.m_150930_(Items.f_42614_)) {
+          ItemStack itemstack1 = itemstack.m_320719_(Items.f_42615_, 1);
+          itemstack1.m_327141_(DataComponents.f_325877_);
+-         List<Filterable<Component>> list = p_215210_.stream().map((p_328199_) -> {
++         List<Filterable<Component>> list = p_215210_.stream().<Filterable<Component>>map((p_328199_) -> {
+             return this.m_326935_(p_328199_).m_327081_(Component::m_237113_);
+          }).toList();
+          itemstack1.m_326949_(DataComponents.f_325888_, new WrittenBookContent(this.m_326935_(p_215209_), this.f_9743_.m_7755_().getString(), 0, list, true));
