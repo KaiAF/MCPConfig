@@ -1,6 +1,6 @@
 --- a/net/minecraft/client/gui/screens/VideoSettingsScreen.java
 +++ b/net/minecraft/client/gui/screens/VideoSettingsScreen.java
-@@ -144,9 +144,7 @@
+@@ -143,9 +143,7 @@
     public boolean m_6050_(double p_278332_, double p_278334_, double p_278285_, double p_300252_) {
        if (Screen.m_96637_()) {
           OptionInstance<Integer> optioninstance = this.f_96282_.m_231928_();
