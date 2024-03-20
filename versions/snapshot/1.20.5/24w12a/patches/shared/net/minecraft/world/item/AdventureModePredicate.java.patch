@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/item/AdventureModePredicate.java
 +++ b/net/minecraft/world/item/AdventureModePredicate.java
-@@ -101,7 +101,7 @@
+@@ -111,7 +111,7 @@
  
        return p_330398_.stream().flatMap((p_328629_) -> {
           return p_328629_.f_146710_().orElseThrow().m_203614_();

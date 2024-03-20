@@ -1,6 +1,6 @@
 --- a/net/minecraft/core/registries/BuiltInRegistries.java
 +++ b/net/minecraft/core/registries/BuiltInRegistries.java
-@@ -182,7 +182,7 @@
+@@ -184,7 +184,7 @@
     public static final Registry<PositionSourceType<?>> f_256972_ = m_258002_(Registries.f_256792_, (p_259113_) -> {
        return PositionSourceType.f_157871_;
     });
@@ -9,7 +9,7 @@
     public static final Registry<StatType<?>> f_256899_ = m_258002_(Registries.f_256849_, (p_259967_) -> {
        return Stats.f_12982_;
     });
-@@ -271,19 +271,19 @@
+@@ -273,19 +273,19 @@
     public static final Registry<FeatureSizeType<?>> f_256958_ = m_258002_(Registries.f_256720_, (p_259370_) -> {
        return FeatureSizeType.f_68296_;
     });
@@ -34,9 +34,9 @@
 -   public static final Registry<Codec<? extends PoolAliasBinding>> f_302795_ = m_258002_(Registries.f_302337_, PoolAliasBindings::m_306375_);
 +   public static final Registry<Codec<? extends PoolAliasBinding>> f_302795_ = m_258002_(Registries.f_302337_, (RegistryBootstrap)PoolAliasBindings::m_306375_);
     public static final Registry<CatVariant> f_256754_ = m_258002_(Registries.f_257006_, CatVariant::m_255364_);
-    public static final Registry<FrogVariant> f_256770_ = m_258002_(Registries.f_256732_, (p_259261_) -> {
-       return FrogVariant.f_218185_;
-@@ -323,7 +323,7 @@
+    public static final Registry<FrogVariant> f_256770_ = m_258002_(Registries.f_256732_, FrogVariant::m_333337_);
+    public static final Registry<Instrument> f_256896_ = m_258002_(Registries.f_257010_, Instruments::m_220148_);
+@@ -324,7 +324,7 @@
        f_256751_.put(resourcelocation, () -> {
           return p_259210_.m_257957_(p_260327_);
        });

@@ -1,0 +1,11 @@
+--- a/net/minecraft/core/HolderSet.java
++++ b/net/minecraft/core/HolderSet.java
+@@ -44,7 +44,7 @@
+    }
+ 
+    static <T> HolderSet<T> m_332996_() {
+-      return HolderSet.Direct.f_332515_;
++      return (HolderSet<T>)HolderSet.Direct.f_332515_;
+    }
+ 
+    @SafeVarargs
