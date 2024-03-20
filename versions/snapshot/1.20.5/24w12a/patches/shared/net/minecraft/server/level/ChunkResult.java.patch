@@ -1,0 +1,11 @@
+--- a/net/minecraft/server/level/ChunkResult.java
++++ b/net/minecraft/server/level/ChunkResult.java
+@@ -27,7 +27,7 @@
+ 
+    @Nullable
+    static <R> R m_327529_(ChunkResult<? extends R> p_329517_, @Nullable R p_329708_) {
+-      R r = p_329517_.m_326769_((R)null);
++      R r = p_329517_.m_326769_(null);
+       return (R)(r != null ? r : p_329708_);
+    }
+ 
