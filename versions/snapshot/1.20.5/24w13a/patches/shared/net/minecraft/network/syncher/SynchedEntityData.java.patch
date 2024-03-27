@@ -1,0 +1,20 @@
+--- a/net/minecraft/network/syncher/SynchedEntityData.java
++++ b/net/minecraft/network/syncher/SynchedEntityData.java
+@@ -46,7 +46,7 @@
+    }
+ 
+    private <T> SynchedEntityData.DataItem<T> m_135379_(EntityDataAccessor<T> p_135380_) {
+-      return this.f_135345_[p_135380_.f_135010_()];
++      return (SynchedEntityData.DataItem<T>)this.f_135345_[p_135380_.f_135010_()];
+    }
+ 
+    public <T> T m_135370_(EntityDataAccessor<T> p_135371_) {
+@@ -122,7 +122,7 @@
+       if (!Objects.equals(p_254484_.f_252511_(), p_135376_.f_135390_.f_135011_())) {
+          throw new IllegalStateException(String.format(Locale.ROOT, "Invalid entity data item type for field %d on entity %s: old=%s(%s), new=%s(%s)", p_135376_.f_135390_.f_135010_(), this.f_135344_, p_135376_.f_135391_, p_135376_.f_135391_.getClass(), p_254484_.f_252525_, p_254484_.f_252525_.getClass()));
+       } else {
+-         p_135376_.m_135397_(p_254484_.f_252525_);
++         p_135376_.m_135397_((T)p_254484_.f_252525_);
+       }
+    }
+ 

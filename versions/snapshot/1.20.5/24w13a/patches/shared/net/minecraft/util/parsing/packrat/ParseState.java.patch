@@ -1,0 +1,11 @@
+--- a/net/minecraft/util/parsing/packrat/ParseState.java
++++ b/net/minecraft/util/parsing/packrat/ParseState.java
+@@ -48,7 +48,7 @@
+ 
+    @Nullable
+    private <T> ParseState.CacheEntry<T> m_332967_(ParseState.CacheKey<T> p_334050_) {
+-      return this.f_332630_.get(p_334050_);
++      return (CacheEntry<T>)this.f_332630_.get(p_334050_);
+    }
+ 
+    private <T> void m_333150_(ParseState.CacheKey<T> p_334242_, Optional<T> p_334229_) {
