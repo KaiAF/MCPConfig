@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -413,6 +413,7 @@
+@@ -417,6 +417,7 @@
              }
  
              entity.m_6478_(MoverType.PLAYER, new Vec3(d6, d7, d8));
@@ -8,7 +8,7 @@
              d6 = d3 - entity.m_20185_();
              d7 = d4 - entity.m_20186_();
              if (d7 > -0.5D || d7 < 0.5D) {
-@@ -437,7 +438,7 @@
+@@ -441,7 +442,7 @@
  
              this.f_9743_.m_284548_().m_7726_().m_8385_(this.f_9743_);
              this.f_9743_.m_307572_(this.f_9743_.m_20185_() - d0, this.f_9743_.m_20186_() - d1, this.f_9743_.m_20189_() - d2);
@@ -17,7 +17,7 @@
              this.f_9763_ = entity.m_20185_();
              this.f_9764_ = entity.m_20186_();
              this.f_9765_ = entity.m_20189_();
-@@ -761,7 +762,7 @@
+@@ -765,7 +766,7 @@
        if (itemstack.m_150930_(Items.f_42614_)) {
           ItemStack itemstack1 = itemstack.m_320719_(Items.f_42615_, 1);
           itemstack1.m_327141_(DataComponents.f_325877_);

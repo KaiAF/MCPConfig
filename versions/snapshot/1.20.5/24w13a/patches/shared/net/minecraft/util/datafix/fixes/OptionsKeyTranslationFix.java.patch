@@ -4,8 +4,8 @@
  
                    return Pair.of(p_145585_.getKey(), p_145585_.getValue());
                 }).collect(Collectors.toMap(Pair::getFirst, Pair::getSecond)));
--            }).result().orElse(p_145582_);
-+            }).result().orElse((com.mojang.serialization.Dynamic) p_145582_);
+-            }).result().orElse(p_335889_);
++            }).result().orElse((com.mojang.serialization.Dynamic)p_335889_);
           });
        });
     }

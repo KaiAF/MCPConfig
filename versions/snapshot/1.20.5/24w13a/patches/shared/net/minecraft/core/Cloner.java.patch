@@ -1,6 +1,6 @@
 --- a/net/minecraft/core/Cloner.java
 +++ b/net/minecraft/core/Cloner.java
-@@ -37,7 +37,7 @@
+@@ -36,7 +36,7 @@
  
        @Nullable
        public <T> Cloner<T> m_305497_(ResourceKey<? extends Registry<? extends T>> p_311946_) {

@@ -1,6 +1,6 @@
 --- a/net/minecraft/world/entity/monster/Slime.java
 +++ b/net/minecraft/world/entity/monster/Slime.java
-@@ -178,7 +178,7 @@
+@@ -179,7 +179,7 @@
     }
  
     public EntityType<? extends Slime> m_6095_() {

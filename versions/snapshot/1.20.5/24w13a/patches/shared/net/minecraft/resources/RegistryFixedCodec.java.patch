@@ -4,8 +4,8 @@
                       return "Failed to get element " + resourcelocation;
                    });
                 }).map((p_256041_) -> {
--                  return Pair.of(p_256041_, (T)p_255515_.getSecond());
-+                  return Pair.of((Holder<E>)p_256041_, (T)p_255515_.getSecond());
+-                  return Pair.of(p_256041_, (T)p_335758_.getSecond());
++                  return Pair.of((Holder<E>)p_256041_, (T)p_335758_.getSecond());
                 }).setLifecycle(Lifecycle.stable());
              });
           }
