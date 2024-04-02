@@ -123,7 +123,7 @@ jobs:
           echo "$1=$(wget -O - $2 | fxparser -c | jq .metadata.versioning.latest -r)" >> $GITHUB_OUTPUT
         }
 
-        get_version srgutils https://maven.minecraftforge.net/net/minecraftforge/srgutils/maven-metadata.xml
+        get_version srgutils https://maven.neoforged.net/net/neoforged/srgutils/maven-metadata.xml
         get_version forgeautorenamingtool https://maven.minecraftforge.net/net/minecraftforge/ForgeAutoRenamingTool/maven-metadata.xml
         get_version forgeflower https://maven.minecraftforge.net/net/minecraftforge/forgeflower/maven-metadata.xml
         get_version installertools https://maven.minecraftforge.net/net/minecraftforge/installertools/maven-metadata.xml
@@ -205,8 +205,8 @@ jobs:
       if: ${{ vars.SRGUTILS_UPDATE == 'true' }}
       uses: jacobtomlinson/gha-find-replace@v3
       with:
-        find: "net.minecraftforge:srgutils:\\d+\\.\\d+\\.\\d+"
-        replace: "net.minecraftforge:srgutils:${{ steps.lib-versions.outputs.srgutils }}"
+        find: "net.neoforged:srgutils:\\d+\\.\\d+\\.\\d+"
+        replace: "net.neoforged:srgutils:${{ steps.lib-versions.outputs.srgutils }}"
         include: buildSrc/build.gradle
     - if: ${{ github.event.inputs.patch_src && github.event.inputs.patch_src != github.event.inputs.new_version }}
       uses: gradle/gradle-build-action@v2
