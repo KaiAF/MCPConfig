@@ -4,7 +4,7 @@ plugins {
 }
 
 import net.minecraftforge.mcpconfig.tasks.*
-import net.minecraftforge.srgutils.MinecraftVersion
+import net.neoforged.srgutils.MinecraftVersion
 import uk.jamierocks.propatcher.task.*
 
 group = 'de.oceanlabs.mcp'

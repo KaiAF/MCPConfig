@@ -9,7 +9,7 @@ import java.util.zip.ZipFile
 import org.gradle.api.*
 import org.gradle.api.tasks.*
 import groovy.json.JsonSlurper
-import net.minecraftforge.srgutils.IMappingFile
+import net.neoforged.srgutils.IMappingFile
 
 public class CreateProjectTemplate extends DefaultTask {
     @Input String distro

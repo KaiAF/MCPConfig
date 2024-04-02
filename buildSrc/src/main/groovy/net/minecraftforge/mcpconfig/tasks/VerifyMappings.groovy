@@ -2,7 +2,7 @@ package net.minecraftforge.mcpconfig.tasks
 
 import net.minecraftforge.mappingverifier.IVerifier
 import net.minecraftforge.mappingverifier.SimpleVerifier
-import net.minecraftforge.srgutils.INamedMappingFile
+import net.neoforged.srgutils.INamedMappingFile
 import org.gradle.api.*
 import org.gradle.api.tasks.*
 import org.gradle.internal.MutableBoolean

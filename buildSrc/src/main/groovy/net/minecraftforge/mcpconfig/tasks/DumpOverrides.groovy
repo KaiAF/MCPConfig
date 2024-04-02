@@ -4,7 +4,7 @@ import java.util.HashSet
 import org.gradle.api.tasks.*
 import groovy.io.FileType
 import groovy.json.JsonSlurper
-import net.minecraftforge.srgutils.IMappingFile
+import net.neoforged.srgutils.IMappingFile
 
 import static org.objectweb.asm.Opcodes.*
 

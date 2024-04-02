@@ -5,7 +5,7 @@ import org.gradle.api.tasks.*
 
 import java.nio.file.Files
 
-import net.minecraftforge.srgutils.*
+import net.neoforged.srgutils.*
 
 public class RenameSources extends DefaultTask {
     @InputDirectory input
