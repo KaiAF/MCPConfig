@@ -19,7 +19,7 @@ ext {
     PATH_BUILD = file('build').absolutePath
 
     ASM_VERSION = '9.2'
-    SRGUTILS_VERSION = '0.5.9'
+    SRGUTILS_VERSION = '1.0.1'
 }
 
 logger.lifecycle('Timestamp: ' + TIMESTAMP)
@@ -121,12 +121,12 @@ subprojects {
     repositories {
         maven {
             name 'forge'
-            url 'https://maven.minecraftforge.net/'
+            url 'https://maven.neoforged.net/releases'
         }
     }
 
     dependencies {
-        srgutilsJar "net.minecraftforge:srgutils:${SRGUTILS_VERSION}"
+        srgutilsJar "net.neoforged:srgutils:${SRGUTILS_VERSION}"
     }
 
     task downloadJson(type: Download, dependsOn: rootProject.downloadVersionManifest) {
