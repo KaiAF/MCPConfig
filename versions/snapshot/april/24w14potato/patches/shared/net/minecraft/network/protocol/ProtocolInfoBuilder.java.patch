@@ -1,0 +1,11 @@
+--- a/net/minecraft/network/protocol/ProtocolInfoBuilder.java
++++ b/net/minecraft/network/protocol/ProtocolInfoBuilder.java
+@@ -33,7 +33,7 @@
+ 
+    public <P extends BundlePacket<? super T>, D extends BundleDelimiterPacket<? super T>> ProtocolInfoBuilder<T, B> m_317002_(PacketType<P> p_319188_, Function<Iterable<Packet<? super T>>, P> p_318475_, D p_318436_) {
+       StreamCodec<ByteBuf, D> streamcodec = StreamCodec.m_316461_(p_318436_);
+-      PacketType<D> packettype = p_318436_.m_5779_();
++      PacketType<D> packettype = (PacketType<D>)p_318436_.m_5779_();
+       this.f_315708_.add(new ProtocolInfoBuilder.CodecEntry<>(packettype, streamcodec));
+       this.f_315287_ = BundlerInfo.m_264118_(p_319188_, p_318475_, p_318436_);
+       return this;

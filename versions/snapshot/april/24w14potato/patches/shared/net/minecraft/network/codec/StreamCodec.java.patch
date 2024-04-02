@@ -1,0 +1,20 @@
+--- a/net/minecraft/network/codec/StreamCodec.java
++++ b/net/minecraft/network/codec/StreamCodec.java
+@@ -90,7 +90,7 @@
+ 
+          public void m_316382_(B p_319001_, U p_318244_) {
+             V v = p_318708_.apply(p_318244_);
+-            StreamCodec<B, U> streamcodec = p_318424_.apply(v);
++            StreamCodec<B, U> streamcodec = (StreamCodec<B, U>)p_318424_.apply(v);
+             StreamCodec.this.m_316382_(p_319001_, v);
+             streamcodec.m_316382_(p_319001_, p_318244_);
+          }
+@@ -222,7 +222,7 @@
+    }
+ 
+    default <S extends B> StreamCodec<S, V> m_316644_() {
+-      return this;
++      return (StreamCodec<S, V>)this;
+    }
+ 
+    @FunctionalInterface

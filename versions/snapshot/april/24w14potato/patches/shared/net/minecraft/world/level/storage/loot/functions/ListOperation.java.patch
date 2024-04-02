@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/level/storage/loot/functions/ListOperation.java
++++ b/net/minecraft/world/level/storage/loot/functions/ListOperation.java
+@@ -15,7 +15,7 @@
+ 
+ public interface ListOperation {
+    static MapCodec<ListOperation> m_333076_(int p_334243_) {
+-      return ListOperation.Type.f_331138_.dispatchMap("mode", ListOperation::m_331520_, (p_336375_) -> {
++      return (MapCodec<ListOperation>)ListOperation.Type.f_331138_.dispatchMap("mode", ListOperation::m_331520_, (p_336375_) -> {
+          return p_336375_.f_331148_;
+       }).validate((p_333864_) -> {
+          if (p_333864_ instanceof ListOperation.ReplaceSection listoperation$replacesection) {

@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/item/component/DebugStickState.java
++++ b/net/minecraft/world/item/component/DebugStickState.java
+@@ -14,7 +14,7 @@
+    public static final Codec<DebugStickState> f_325471_ = Codec.dispatchedMap(BuiltInRegistries.f_256975_.m_206110_(), (p_329285_) -> {
+       return Codec.STRING.comapFlatMap((p_328593_) -> {
+          Property<?> property = p_329285_.m_203334_().m_49965_().m_61081_(p_328593_);
+-         return property != null ? DataResult.success(property) : DataResult.error(() -> {
++         return property != null ? DataResult.success(property) : DataResult.<Property<?>>error(() -> {
+             return "No property on " + p_329285_.m_313865_() + " with name: " + p_328593_;
+          });
+       }, Property::m_61708_);

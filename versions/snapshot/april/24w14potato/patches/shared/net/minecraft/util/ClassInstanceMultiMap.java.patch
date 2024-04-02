@@ -1,0 +1,11 @@
+--- a/net/minecraft/util/ClassInstanceMultiMap.java
++++ b/net/minecraft/util/ClassInstanceMultiMap.java
+@@ -58,7 +58,7 @@
+          List<? extends T> list = this.f_13527_.computeIfAbsent(p_13534_, (p_335806_) -> {
+             return this.f_13529_.stream().filter(p_335806_::isInstance).collect(Util.m_335212_());
+          });
+-         return Collections.unmodifiableCollection(list);
++         return (Collection<S>)Collections.unmodifiableCollection(list);
+       }
+    }
+ 

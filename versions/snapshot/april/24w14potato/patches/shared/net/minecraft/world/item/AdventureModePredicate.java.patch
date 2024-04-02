@@ -1,0 +1,11 @@
+--- a/net/minecraft/world/item/AdventureModePredicate.java
++++ b/net/minecraft/world/item/AdventureModePredicate.java
+@@ -111,7 +111,7 @@
+ 
+       return p_330398_.stream().flatMap((p_328629_) -> {
+          return p_328629_.f_146710_().orElseThrow().m_203614_();
+-      }).distinct().map((p_329896_) -> {
++      }).distinct().<Component>map((p_329896_) -> {
+          return p_329896_.m_203334_().m_49954_().m_130940_(ChatFormatting.DARK_GRAY);
+       }).toList();
+    }

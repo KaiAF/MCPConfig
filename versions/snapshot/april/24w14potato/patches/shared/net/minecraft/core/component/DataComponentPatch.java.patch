@@ -1,0 +1,20 @@
+--- a/net/minecraft/core/component/DataComponentPatch.java
++++ b/net/minecraft/core/component/DataComponentPatch.java
+@@ -19,7 +19,7 @@
+ 
+ public final class DataComponentPatch {
+    public static final DataComponentPatch f_325963_ = new DataComponentPatch(Reference2ObjectMaps.emptyMap());
+-   public static final Codec<DataComponentPatch> f_326024_ = Codec.dispatchedMap(DataComponentPatch.PatchKey.f_325866_, DataComponentPatch.PatchKey::m_326755_).xmap((p_329119_) -> {
++   public static final Codec<DataComponentPatch> f_326024_ = Codec.<DataComponentPatch.PatchKey, Object>dispatchedMap(DataComponentPatch.PatchKey.f_325866_, DataComponentPatch.PatchKey::m_326755_).xmap((p_329119_) -> {
+       if (p_329119_.isEmpty()) {
+          return f_325963_;
+       } else {
+@@ -132,7 +132,7 @@
+ 
+    @Nullable
+    public <T> Optional<? extends T> m_326784_(DataComponentType<? extends T> p_329766_) {
+-      return this.f_325503_.get(p_329766_);
++      return (Optional<? extends T>)this.f_325503_.get(p_329766_);
+    }
+ 
+    public Set<Map.Entry<DataComponentType<?>, Optional<?>>> m_326632_() {

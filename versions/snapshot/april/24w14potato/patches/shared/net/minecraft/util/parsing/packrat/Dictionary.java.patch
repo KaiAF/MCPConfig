@@ -1,0 +1,10 @@
+--- a/net/minecraft/util/parsing/packrat/Dictionary.java
++++ b/net/minecraft/util/parsing/packrat/Dictionary.java
+@@ -24,6 +24,6 @@
+ 
+    @Nullable
+    public <T> Rule<S, T> m_332957_(Atom<T> p_334387_) {
+-      return this.f_332586_.get(p_334387_);
++      return (Rule<S, T>)this.f_332586_.get(p_334387_);
+    }
+ }

@@ -5,7 +5,7 @@ import org.gradle.api.tasks.*
 
 import java.util.zip.*
 
-import net.minecraftforge.srgutils.IMappingFile
+import net.neoforged.srgutils.IMappingFile
 
 public class SplitJar extends DefaultTask {
     @InputFile mappings
